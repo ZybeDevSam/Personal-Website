@@ -1,2 +1,2 @@
 *.zip
-ignore/
+.DS_Store
