@@ -78,22 +78,3 @@ if (toggleSwitch) {
     toggleSwitch.checked = document.documentElement.getAttribute('data-theme') === 'dark';
     toggleSwitch.addEventListener('change', switchTheme, false);
 }
-
-// keep the snow in view while scrolling
-let canvasHeight = 0;
-
-function updateCanvasHeight() {
-    canvasHeight = document.documentElement.scrollHeight - window.innerHeight;
-}
-
-if (tp) {
-    updateCanvasHeight();
-    window.addEventListener("resize", updateCanvasHeight);
-    window.addEventListener("load", updateCanvasHeight);
-    window.addEventListener("scroll", () => {
-        const scrollAmount = window.scrollY - 8;
-        if (Math.round(scrollAmount) <= canvasHeight) {
-            tp.style.transform = `translateY(${scrollAmount}px)`;
-        }
-    });
-}
