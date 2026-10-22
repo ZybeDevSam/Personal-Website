@@ -1,12 +1,12 @@
 const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+const smallScreen = window.matchMedia('(max-width: 700px)').matches;
 
 const backgroundTheme = {
     name: "SnowLight",
     fpsLimit: 240,
     particles: {
         number: {
-            value: 100,
+            value: smallScreen ? 50 : 100,
             density: {
                 enable: true,
                 area: 400
@@ -60,40 +60,40 @@ const backgroundTheme = {
 
 
 // tsParticles.load has two parameters, the first one is the id of the container, the second one is an object with the options
-tsParticles.load("tsparticles", backgroundTheme);
-
-if (currentTheme) {
-    document.documentElement.setAttribute('data-theme', currentTheme);
-
-    if (currentTheme === 'dark') {
-        toggleSwitch.checked = true;
-    }
+const tp = document.getElementById("tsparticles");
+if (tp && window.tsParticles) {
+    tsParticles.load("tsparticles", backgroundTheme);
 }
 
+// the theme itself is set by the inline script in each page's <head>, so there is no flash on load
 function switchTheme(e) {
-    if (e.target.checked) {
-        localStorage.setItem('theme', 'dark');
-        document.documentElement.setAttribute('data-theme', 'dark');
-
-    }
-    else {
-        localStorage.setItem('theme', 'light');
-        document.documentElement.setAttribute('data-theme', 'light');
-    }
+    const theme = e.target.checked ? 'dark' : 'light';
+    try {
+        localStorage.setItem('theme', theme);
+    } catch (err) { }
+    document.documentElement.setAttribute('data-theme', theme);
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
-
-let tp = document.getElementById("tsparticles");
-var canvas = tp ? tp.querySelector('.tsparticles-canvas-el') : null;
-var canvasHeight = 0;
-
-if (canvas) {
-    canvasHeight = document.documentElement.scrollHeight-window.innerHeight;
+if (toggleSwitch) {
+    toggleSwitch.checked = document.documentElement.getAttribute('data-theme') === 'dark';
+    toggleSwitch.addEventListener('change', switchTheme, false);
 }
-    window.addEventListener("scroll", (e) => {
-        const scrollAmount = window.scrollY-8;
-        if (Math.round(scrollAmount) <= (canvasHeight)) {
+
+// keep the snow in view while scrolling
+let canvasHeight = 0;
+
+function updateCanvasHeight() {
+    canvasHeight = document.documentElement.scrollHeight - window.innerHeight;
+}
+
+if (tp) {
+    updateCanvasHeight();
+    window.addEventListener("resize", updateCanvasHeight);
+    window.addEventListener("load", updateCanvasHeight);
+    window.addEventListener("scroll", () => {
+        const scrollAmount = window.scrollY - 8;
+        if (Math.round(scrollAmount) <= canvasHeight) {
             tp.style.transform = `translateY(${scrollAmount}px)`;
         }
     });
+}

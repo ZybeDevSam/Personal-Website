@@ -22,3 +22,13 @@
   filter: drop-shadow(0px 4px 4px var(--accent));
 
 }
+
+/* let the fixed-size p5 canvas shrink on narrow screens */
+.canvas-container {
+  max-width: calc(100vw - 32px);
+}
+
+.canvas-container canvas {
+  max-width: 100%;
+  height: auto !important;
+}

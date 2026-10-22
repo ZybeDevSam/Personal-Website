@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-    <title>Art</title>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../Assets/me/IMG_3627.JPG" type="image/x-icon">
-    <link rel="icon" href="../../../../Assets/me/IMG_3627.JPG" type="image/x-icon">
-
-    <title>Samuel Belin</title>
+    <meta name="description" content="Artwork by Samuel Belin.">
+    <title>Samuel Belin - Art</title>
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light'; } catch (e) { }</script>
+    <link rel="icon" href="../Assets/me/favicon.png" type="image/png">
     <link rel="stylesheet" href="art.css">
     <link rel="stylesheet" href="../Global/global.css">
 </head>
@@ -23,12 +23,12 @@
             </li>
             <li><a href="../index.html#projects">Projects/About</a>
             </li>
-            <li><a href="../index.html#profile-link">Contact</a>
+            <li><a href="../index.html#contact">Contact</a>
             </li>
             <li>
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
+                        <input type="checkbox" id="checkbox" aria-label="Toggle dark mode" />
                         <div class="slider round"></div>
                     </label>
                 </div>
@@ -38,21 +38,28 @@
     <div class="title-container">
         <h1 class="title">Artwork</h1>
         <p class="title">By: Sam Belin</p>
-        <button class="arrow-button">
-            <a href="#image-container" class="arrow">&#9660;</a><!--might use this later ↓-->
-          </button>
+        <a href="#image-container" class="arrow-button" aria-label="Scroll to artwork">&#9660;</a>
     </div>
     <div class="spacer"></div>
     <div id="image-container" class="image-container">
         <!-- <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.1.jpg" alt="Field in Motion Collage"> -->
         <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.2.jpg"
-            alt="photograph studies of elements and principles">
-        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.3.jpg">
-        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.4.jpeg">
-        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.5/Samuel_Belin_02.5.jpg">
-        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.5/Samuel_Belin_Context_02.5.jpg">
-        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.6/Belin_Art_Final.jpg">
+            alt="photograph studies of elements and principles" width="1600" height="1600" loading="lazy">
+        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.3.jpg"
+            alt="Artwork by Sam Belin, 2D Approaches piece 2.3" width="1584" height="1600" loading="lazy">
+        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.4.jpeg"
+            alt="Artwork by Sam Belin, 2D Approaches piece 2.4" width="1441" height="1600" loading="lazy">
+        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.5/Samuel_Belin_02.5.jpg"
+            alt="Artwork by Sam Belin, 2D Approaches piece 2.5" width="1600" height="846" loading="lazy">
+        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.5/Samuel_Belin_Context_02.5.jpg"
+            alt="Artwork by Sam Belin, 2D Approaches piece 2.5 shown in context" width="1200" height="1600"
+            loading="lazy">
+        <img class="image" src="../Assets/art/2dApproches/Samuel_Belin_02.6/Belin_Art_Final.jpg"
+            alt="Artwork by Sam Belin, 2D Approaches final piece" width="1600" height="1600" loading="lazy">
     </div>
+    <dialog id="lightbox" class="lightbox" aria-label="Enlarged artwork">
+        <img src="" alt="">
+    </dialog>
     <div class="spacer"></div>
     <div class="button-container">
         <a href="../index.html#projects" class="home-button">Home</a>
@@ -63,6 +70,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"
     integrity="sha512-SrYSABdk01dnXiEz2YOFvpgWn/vePlQwbr/Od+rs6x8/hjfLfR6YfZuU+qW4QaQYnl8mL1a4DgjMMdiXShNzjg=="
     crossorigin="anonymous"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;88a1f2e86f244e9a8b44a4793b439658&quot;}"></script>
 <script src="../Global/snow.js"></script>
+<script src="art.js"></script>
 
 </html>
