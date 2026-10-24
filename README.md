@@ -4,27 +4,36 @@ The personal site of Sam Belin: computer science grad (University of Denver), ar
 
 It's a plain static site: HTML, CSS and a little JavaScript. There's no framework, no build step and no package manager. Edit a file, refresh the browser.
 
+Everything the website serves is in the `public/` folder. The repo root only holds this README, `CLAUDE.md` and `.gitignore`, which don't get deployed.
+
 ## Running it locally
 
-Serve the folder with any static web server. You need Python 3, which is already installed on macOS:
+Serve the `public/` folder with any static web server. You need Python 3, which is already installed on macOS:
 
 ```sh
 cd Personal-Website
-python3 -m http.server 8000
+python3 -m http.server 8000 -d public
 ```
 
 Then open <http://localhost:8000>. Stop the server with `Ctrl+C`.
 
 Use a server rather than double-clicking `index.html`. The Moose Game loads its images with p5.js, and browsers block that on `file://` URLs.
 
-Any other static server works too, e.g. `npx serve .`, or the "Live Server" extension in VS Code, which also reloads the page when you save.
+Any other static server works too, e.g. `npx serve public`, or the "Live Server" extension (open a file inside `public/`) in VS Code, which also reloads the page when you save.
+
+## Deploying
+
+Cloudflare deploys the `public/` folder. In the Pages project settings, set the build command to empty and the build output directory to `public`. Anything outside `public/` stays off the live site.
 
 ## What's where
+
+All paths are inside `public/`.
 
 ```
 index.html, index.css         Home page: hero, About + Projects, Contact
 Global/global.css             Theme colors, font, base styles, navbar, theme switch, buttons
 Global/snow.js                Falling snow (tsParticles) and the light/dark switch
+Global/newsnow.js             Unused snow experiment, not linked by any page
 art_section/                  Artwork gallery (art.html, art.css, art.js = click-to-enlarge)
 snowboard_section/            Snowboard lesson inquiries
 computer_section/
@@ -38,7 +47,7 @@ External scripts come from CDNs: tsParticles 4.4.0 (the full `tsparticles.bundle
 
 ## How the pages fit together
 
-There are no templates or includes. Every page repeats the same `<head>`, nav bar and scripts by hand. When you change the nav or head, update all five pages:
+There are no templates or includes. Every page repeats the same `<head>`, nav bar and scripts by hand. When you change the nav or head, update all five pages in `public/`:
 
 - `index.html`
 - `art_section/art.html`
@@ -54,7 +63,7 @@ Each page needs, in this order:
 2. In `<body>`: `<div id="tsparticles">` and `<canvas id="background">`, plus the shared nav with the theme checkbox.
 3. At the end: the tsParticles CDN script (keep its `integrity` hash), the Cloudflare beacon, then `Global/snow.js`.
 
-The easiest way to add a page is to copy the structure of `snowboard_section/snowboard.html`, which is the simplest page.
+The easiest way to add a page is to copy the structure of `public/snowboard_section/snowboard.html`, which is the simplest page.
 
 ## Styling rules
 
