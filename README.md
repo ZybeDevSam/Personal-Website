@@ -31,6 +31,7 @@ All paths are inside `public/`.
 
 ```
 index.html, index.css         Home page: hero, About + Projects, Contact
+404.html                      "Page not found" page, served by Cloudflare for any missing URL
 Global/global.css             Theme colors, font, base styles, navbar, theme switch, buttons
 Global/snow.js                Falling snow (tsParticles) and the light/dark switch
 Global/newsnow.js             Unused snow experiment, not linked by any page
@@ -47,15 +48,18 @@ External scripts come from CDNs: tsParticles 4.4.0 (the full `tsparticles.bundle
 
 ## How the pages fit together
 
-There are no templates or includes. Every page repeats the same `<head>`, nav bar and scripts by hand. When you change the nav or head, update all five pages in `public/`:
+There are no templates or includes. Every page repeats the same `<head>`, nav bar and scripts by hand. When you change the nav or head, update all six pages in `public/`:
 
 - `index.html`
+- `404.html`
 - `art_section/art.html`
 - `snowboard_section/snowboard.html`
 - `computer_section/Random Password/RandomPass.html`
 - `computer_section/Processing/introclass/Final/MooseGame.html`
 
 Links are relative, so their `../` prefixes depend on how deep the page is. Check them after any edit.
+
+The exception is `404.html`. Cloudflare serves it at whatever missing URL was requested, at any depth, so all its links start with `/` (e.g. `/Global/global.css`). Keep it at the root of `public/`, or Cloudflare won't find it. Preview it at `http://localhost:8000/404.html`.
 
 Each page needs, in this order:
 
