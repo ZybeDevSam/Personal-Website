@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" href="../../Assets/me/IMG_3627.JPG" type="image/x-icon">
-    <title>Samuel Belin</title>
-    <link rel="stylesheet" href="RandomPass.css ">
-    <link rel="stylesheet" href="../../Global/global.css" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="../../Assets/me/IMG_3627.JPG" type="image/x-icon">
-
-
+    <meta name="description" content="Random password generator by Samuel Belin.">
+    <title>Samuel Belin - Random Password Generator</title>
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light'; } catch (e) { }</script>
+    <link rel="icon" href="../../Assets/me/favicon.png" type="image/png">
+    <link rel="stylesheet" href="RandomPass.css">
+    <link rel="stylesheet" href="../../Global/global.css" />
 </head>
 
 <body>
-    <div id="tsparticles" style="transform: translateY(0px);"><!--auto loads canvas--></div>
+    <div id="tsparticles"><!--auto loads canvas--></div>
     <div>
         <canvas id="background"></canvas>
     </div>
@@ -23,12 +23,12 @@
             </li>
             <li><a href="../../index.html#projects">Projects/About</a>
             </li>
-            <li><a href="../../index.html#profile-link">Contact</a>
+            <li><a href="../../index.html#contact">Contact</a>
             </li>
             <li>
                 <div class="theme-switch-wrapper">
                     <label class="theme-switch" for="checkbox">
-                        <input type="checkbox" id="checkbox" />
+                        <input type="checkbox" id="checkbox" aria-label="Toggle dark mode" />
                         <div class="slider round"></div>
                     </label>
                 </div>
@@ -59,10 +59,11 @@
         </div>
     </div>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"
-    integrity="sha512-SrYSABdk01dnXiEz2YOFvpgWn/vePlQwbr/Od+rs6x8/hjfLfR6YfZuU+qW4QaQYnl8mL1a4DgjMMdiXShNzjg=="
-    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/4.4.0/tsparticles.bundle.min.js"
+    integrity="sha512-pendClgoHBqQEpcvr5+gEIuKmy3VjQBvDONiI6lGOReGRs24ty8/Vc0Xs3b7Qm1kZ4IT5L77baqJRV0gVNC+wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="./random_password.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;88a1f2e86f244e9a8b44a4793b439658&quot;}"></script>
 <script src="../../Global/snow.js"></script>
 
 </html>

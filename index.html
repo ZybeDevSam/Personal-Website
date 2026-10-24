@@ -2,32 +2,34 @@
 <html lang="en" data-theme="light">
 
 <head>
-    <link rel="icon" href="Assets/me/IMG_3627.JPG" type="image/x-icon">
-    <title>Samuel Belin</title>
-    <!-- <link rel="stylesheet" href="index.css"> -->
-    <link rel="stylesheet" href="Global/global.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Samuel Belin: computer scientist, artist and snowboard instructor from Boulder, Colorado.">
+    <title>Samuel Belin</title>
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem('theme') || 'light'; } catch (e) { }</script>
+    <link rel="icon" href="Assets/me/favicon.png" type="image/png">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="Global/global.css" />
 </head>
 
 <body>
-    <!-- <div class="large-screen-content">
-        <div id="tsparticles" style="transform: translateY(0px);"></div>
-        <div class="background">
+    <div class="large-screen-content">
+        <div id="tsparticles"><!--auto loads canvas--></div>
+        <div>
             <canvas id="background"></canvas>
-        </div> -->
+        </div>
         <nav id="navbar" class="navbar">
             <ul class="list">
                 <li><a href="#information-container">Home</a>
                 </li>
                 <li><a href="#projects">Projects/About</a>
                 </li>
-                <li><a href="#profile-link">Contact</a>
+                <li><a href="#contact">Contact</a>
                 </li>
                 <li>
                     <div class="theme-switch-wrapper">
                         <label class="theme-switch" for="checkbox">
-                            <input type="checkbox" id="checkbox" />
+                            <input type="checkbox" id="checkbox" aria-label="Toggle dark mode" />
                             <div class="slider round"></div>
                         </label>
                     </div>
@@ -38,29 +40,30 @@
             <div id="information">
                 <h1 class="info-title">Samuel Belin</h1>
                 <br>
+                <!-- Computer Scientist -->
                 <a href="#projects">Computer Scientist</a>
+                <!-- <a href="computer_section/Processing/Astronomy/astronomyfinal.html">working directory</a> -->
+                <!-- <br> -->
                 <a href="art_section/art.html">Artist</a>
+                <!-- <br> -->
                 <a href="snowboard_section/snowboard.html">Snowboard Instructor</a>
             </div>
         </div>
         <div id="projects" class="projects-section">
             <div class="column-1">
                 <h1>A little about me</h1>
-                <p>Hello My name is <i>Sam Belin</i>. I am a recent graduate from the University of Denver. I graduated
-                    with
-                    a
-                    degree in computer science. I am from Boulder Colorado and love the outdoors, snowboarding and
-                    hiking. I
-                    am a Enthusiastic problem solver and love working with computers as well as learning all I can about
-                    them</p>
+                <p>Hello, my name is <i>Sam Belin</i>. I am a recent graduate from the University of Denver. I graduated
+                    with a degree in computer science. I am from Boulder, Colorado and love the outdoors, snowboarding
+                    and hiking. I am an enthusiastic problem solver and love working with computers as well as learning
+                    all I can about them.</p>
             </div>
             <div class="column-2">
                 <div class="title">
                     <h1>Some Projects</h1>
                 </div>
                 <div class="projects-holder">
-                    <a href="https://codepen.io/belinsam406/pen/ExGeZdY" target="_blank" class="project project-title "
-                        id="cursorevent">
+                    <a href="https://codepen.io/belinsam406/pen/ExGeZdY" target="_blank"
+                        class="project project-title cursorevent">
                         <p class="project-tile">
                             Tribute Page
                         </p>
@@ -80,40 +83,19 @@
                 </div>
             </div>
         </div>
-        <div class="contact">
+        <div id="contact" class="contact">
             <div class="profile-header">
                 <h1>Connect With me</h1>
             </div>
             <div class="contact-links">
-                <a id="profile-link" href="https://github.com/belinsam406" target="_blank">GitHub</a>
+                <a class="profile-link" href="https://github.com/belinsam406" target="_blank">GitHub</a>
             </div>
             <div class="contact-links">
-                <a id="profile-link" href="https://www.linkedin.com/in/sam-belin-805846236/"
+                <a class="profile-link" href="https://www.linkedin.com/in/sam-belin-805846236/"
                     target="_blank">LinkedIn</a>
             </div>
             <div class="contact-links">
-                <a id="profile-link" href="https://codepen.io/belinsam406" target="_blank">codepen</a>
-            </div>
-            <div class="contact-links">
-                <p>belinsam406(at)gmail(dot)com</p>
-            </div>
-        </div>
-    </div>
-    <div class="small-screen-content">
-        <div class="contact-small-view">
-            <h1>Working on Mobile view</h1>
-            <div class="profile-header">
-                <h1>Connect With me</h1>
-            </div>
-            <div class="contact-links">
-                <a id="profile-link" href="https://github.com/belinsam406" target="_blank">GitHub</a>
-            </div>
-            <div class="contact-links">
-                <a id="profile-link" href="https://www.linkedin.com/in/sam-belin-805846236/"
-                    target="_blank">LinkedIn</a>
-            </div>
-            <div class="contact-links">
-                <a id="profile-link" href="https://codepen.io/belinsam406" target="_blank">codepen</a>
+                <a class="profile-link" href="https://codepen.io/belinsam406" target="_blank">codepen</a>
             </div>
             <div class="contact-links">
                 <p>belinsam406(at)gmail(dot)com</p>
@@ -121,16 +103,12 @@
         </div>
     </div>
 </body>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/2.10.1/tsparticles.min.js" 
-    integrity="sha512-+YPbXItNhUCZR3fn5KeWPtJrXuoqRYQ4Gd1rIjEFG+h8UJYekebhOMh84vv7q+Y1sy5kdIIVtfftehCiigriMQ==" 
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/1.18.11/tsparticles.min.js"
-    integrity="sha512-SrYSABdk01dnXiEz2YOFvpgWn/vePlQwbr/Od+rs6x8/hjfLfR6YfZuU+qW4QaQYnl8mL1a4DgjMMdiXShNzjg=="
-    crossorigin="anonymous"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tsparticles/4.4.0/tsparticles.bundle.min.js"
+    integrity="sha512-pendClgoHBqQEpcvr5+gEIuKmy3VjQBvDONiI6lGOReGRs24ty8/Vc0Xs3b7Qm1kZ4IT5L77baqJRV0gVNC+wg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script defer="" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;88a1f2e86f244e9a8b44a4793b439658&quot;}">
     </script>
 
-<!-- <script src="Global/snow.js"></script> -->
-<script src="Global/newsnow.js"></script>
+<script src="Global/snow.js"></script>
 
 </html>
