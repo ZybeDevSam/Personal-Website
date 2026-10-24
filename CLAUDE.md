@@ -27,7 +27,7 @@ Assets/me, Assets/art/...     Images (IMG_3627.JPG is also used as the favicon)
 - **Base:** `html` font-size 75%, body 1.8rem, line-height 1.4. Sections are often full-viewport height.
 - **Navbar:** fixed top-right list: Home, Projects/About, Contact, theme slider. Identical markup on every page, with link paths adjusted for depth.
 - **Buttons:** use `.home-button` (+ `.button-container`) from global.css. Form buttons use `var(--accent)` background.
-- **Reuse before adding.** New pages should link `Global/global.css`, include the shared nav block, the `#tsparticles` + `#background` divs, the tsParticles 1.18.11 CDN script (with its integrity hash), then `Global/snow.js`.
+- **Reuse before adding.** New pages should link `Global/global.css`, include the shared nav block, the `#tsparticles` + `#background` divs, the tsParticles 4.4.0 CDN script (`tsparticles.bundle.min.js`) (with its integrity hash), then `Global/snow.js`.
 
 ## Conventions and gotchas
 - Every page repeats the same head/nav/scripts by hand (no includes). When changing the nav or head, update ALL pages: `index.html`, `art_section/art.html`, `snowboard_section/snowboard.html`, `computer_section/Random Password/RandomPass.html`, `computer_section/Processing/introclass/Final/MooseGame.html`.

@@ -4,16 +4,25 @@ const smallScreen = window.matchMedia('(max-width: 700px)').matches;
 const backgroundTheme = {
     name: "SnowLight",
     fpsLimit: 240,
+    // keep the canvas inside #tsparticles; global.css pins it to the screen
+    fullScreen: {
+        enable: false,
+    },
     particles: {
         number: {
             value: smallScreen ? 50 : 100,
             density: {
                 enable: true,
-                area: 400
+                width: 800,
+                height: 500,
             },
         },
-        color: {
-            value: "#FFFFFF",
+        paint: {
+            fill: {
+                color: {
+                    value: "#FFFFFF",
+                },
+            },
         },
         shape: {
             type: "circle"
@@ -33,21 +42,11 @@ const backgroundTheme = {
             speed: 2,
             direction: "bottom",
             straight: false,
-            wobble: true,
         },
         wobble: {
             enable: true,
             distance: 5,
             speed: 1,
-        },
-        zIndex: {
-            value: {
-                min: 0,
-                max: 100,
-            },
-            opacityRate: 10,
-            sizeRate: 10,
-            velocityRate: 10,
         },
     },
     background: {
@@ -59,10 +58,13 @@ const backgroundTheme = {
 
 
 
-// tsParticles.load has two parameters, the first one is the id of the container, the second one is an object with the options
+// loadFull registers the bundle's features, then tsParticles.load takes one object with the container id and the options
 const tp = document.getElementById("tsparticles");
-if (tp && window.tsParticles) {
-    tsParticles.load("tsparticles", backgroundTheme);
+if (tp && window.tsParticles && window.loadFull) {
+    (async () => {
+        await loadFull(tsParticles);
+        await tsParticles.load({ id: "tsparticles", options: backgroundTheme });
+    })();
 }
 
 // the theme itself is set by the inline script in each page's <head>, so there is no flash on load

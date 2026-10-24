@@ -34,7 +34,7 @@ Assets/me/                    Photo of Sam + favicon.png
 Assets/art/                   Artwork images
 ```
 
-External scripts come from CDNs: tsParticles 1.18.11, p5.js 1.4.0 (Moose Game only) and the Cloudflare Web Analytics beacon. The fonts come from Google Fonts.
+External scripts come from CDNs: tsParticles 4.4.0 (the full `tsparticles.bundle.min.js` from cdnjs; `snow.js` calls `loadFull` before loading), p5.js 1.4.0 (Moose Game only) and the Cloudflare Web Analytics beacon. The fonts come from Google Fonts.
 
 ## How the pages fit together
 
